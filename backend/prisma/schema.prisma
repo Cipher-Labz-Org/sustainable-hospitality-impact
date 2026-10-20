@@ -1,0 +1,112 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id                 String        @id @default(cuid())
+  email              String        @unique
+  passwordHash       String
+  /// When false, the account was provisioned with a fixed password (admin/CLI).
+  canChangePassword  Boolean       @default(false)
+  isAdmin            Boolean       @default(false)
+  createdAt          DateTime      @default(now())
+  updatedAt          DateTime      @updatedAt
+  organization       Organization?
+}
+
+model Organization {
+  id            String       @id @default(cuid())
+  userId        String       @unique
+  user          User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  name          String       @default("")
+  country       String       @default("")
+  language      String       @default("English")
+  city          String       @default("")
+  street        String       @default("")
+  number        String       @default("")
+  postcode      String       @default("")
+  businessTypes String       @default("[]")
+  /// When set, assessment answers and evidence are locked for editing.
+  reportPublishedAt DateTime?
+  /// Public read-only snapshot at /share/[token] (active only while published).
+  reportShareToken  String?   @unique
+  createdAt     DateTime     @default(now())
+  updatedAt     DateTime     @updatedAt
+  contact       Contact?
+  brand         BrandAsset?
+  responses     Response[]
+}
+
+model Contact {
+  id             String       @id @default(cuid())
+  organizationId String       @unique
+  organization   Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  firstName      String       @default("")
+  lastName       String       @default("")
+  title          String       @default("")
+  phone          String       @default("")
+  email          String       @default("")
+  updatedAt      DateTime     @updatedAt
+}
+
+model BrandAsset {
+  id             String       @id @default(cuid())
+  organizationId String       @unique
+  organization   Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  originalName   String
+  storedName     String
+  mimeType       String
+  size           Int
+  updatedAt      DateTime     @updatedAt
+}
+
+model Criterion {
+  id           String     @id @default(cuid())
+  section      String
+  categoryCode String
+  categoryName String
+  ref          String     @unique
+  question     String
+  sortOrder    Int
+  responses    Response[]
+
+  @@index([section, sortOrder])
+}
+
+model Response {
+  id             String         @id @default(cuid())
+  organizationId String
+  criterionId    String
+  organization   Organization   @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  criterion      Criterion      @relation(fields: [criterionId], references: [id], onDelete: Cascade)
+  status         String?
+  notes          String         @default("")
+  /// Internal coach / audit remarks (Reporting tab uses `notes`).
+  remarks        String         @default("")
+  /// Steps to close a gap when status is No or not yet compliant.
+  actionPlan     String         @default("")
+  createdAt      DateTime       @default(now())
+  updatedAt      DateTime       @updatedAt
+  evidence       EvidenceFile[]
+
+  @@unique([organizationId, criterionId])
+  @@index([organizationId])
+}
+
+model EvidenceFile {
+  id           String   @id @default(cuid())
+  responseId   String
+  response     Response @relation(fields: [responseId], references: [id], onDelete: Cascade)
+  originalName String
+  storedName   String
+  mimeType     String
+  size         Int
+  createdAt    DateTime @default(now())
+
+  @@index([responseId])
+}

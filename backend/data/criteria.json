@@ -1,0 +1,1626 @@
+[
+  {
+    "section": "A",
+    "categoryCode": "A1",
+    "categoryName": "Sustainability Management System",
+    "ref": "A1.1",
+    "question": "Is there a written sustainability policy covering environmental, social, and cultural commitments?",
+    "sortOrder": 1
+  },
+  {
+    "section": "A",
+    "categoryCode": "A1",
+    "categoryName": "Sustainability Management System",
+    "ref": "A1.2",
+    "question": "Has the policy been formally approved and communicated with the staff?",
+    "sortOrder": 2
+  },
+  {
+    "section": "A",
+    "categoryCode": "A1",
+    "categoryName": "Sustainability Management System",
+    "ref": "A1.3",
+    "question": "Does the hotel maintain a documented sustainability management plan appropriate to its size?",
+    "sortOrder": 3
+  },
+  {
+    "section": "A",
+    "categoryCode": "A1",
+    "categoryName": "Sustainability Management System",
+    "ref": "A1.4",
+    "question": "Does the plan include targets for social, cultural, and environmental sustainability indicators?",
+    "sortOrder": 4
+  },
+  {
+    "section": "A",
+    "categoryCode": "A1",
+    "categoryName": "Sustainability Management System",
+    "ref": "A1.5",
+    "question": "Are these targets reviewed and updated at least annually?",
+    "sortOrder": 5
+  },
+  {
+    "section": "A",
+    "categoryCode": "A1",
+    "categoryName": "Sustainability Management System",
+    "ref": "A1.6",
+    "question": "Does the management plan identify and address potential sustainability-related risks?",
+    "sortOrder": 6
+  },
+  {
+    "section": "A",
+    "categoryCode": "A1",
+    "categoryName": "Sustainability Management System",
+    "ref": "A1.7",
+    "question": "Are specific financial and human resources allocated to implement the plan?",
+    "sortOrder": 7
+  },
+  {
+    "section": "A",
+    "categoryCode": "A1",
+    "categoryName": "Sustainability Management System",
+    "ref": "A1.8",
+    "question": "Is the plan’s effectiveness reviewed annually and updated based on findings?",
+    "sortOrder": 8
+  },
+  {
+    "section": "A",
+    "categoryCode": "A2",
+    "categoryName": "Legal and Compliance",
+    "ref": "A2.1",
+    "question": "Does the hotel maintain an updated register of all applicable local/national laws and regulations?",
+    "sortOrder": 9
+  },
+  {
+    "section": "A",
+    "categoryCode": "A2",
+    "categoryName": "Legal and Compliance",
+    "ref": "A2.2",
+    "question": "Are internal policies implemented to ensure full legal compliance?",
+    "sortOrder": 10
+  },
+  {
+    "section": "A",
+    "categoryCode": "A3",
+    "categoryName": "Guest and Staff Welfare",
+    "ref": "A3.1",
+    "question": "Is a designated person assigned to oversee guest and staff health and safety?",
+    "sortOrder": 11
+  },
+  {
+    "section": "A",
+    "categoryCode": "A3",
+    "categoryName": "Guest and Staff Welfare",
+    "ref": "A3.2",
+    "question": "Do staff receive training on hazard prevention, emergency response, and crisis preparedness?",
+    "sortOrder": 12
+  },
+  {
+    "section": "A",
+    "categoryCode": "A4",
+    "categoryName": "Reporting and Communication",
+    "ref": "A4.1",
+    "question": "Is the sustainability policy communicated to staff, guests, and suppliers?",
+    "sortOrder": 13
+  },
+  {
+    "section": "A",
+    "categoryCode": "A4",
+    "categoryName": "Reporting and Communication",
+    "ref": "A4.2",
+    "question": "Does the hotel publish a publicly accessible annual sustainability report?",
+    "sortOrder": 14
+  },
+  {
+    "section": "A",
+    "categoryCode": "A4",
+    "categoryName": "Reporting and Communication",
+    "ref": "A4.3",
+    "question": "Is sustainability data regularly collected and monitored to ensure accurate reporting?",
+    "sortOrder": 15
+  },
+  {
+    "section": "A",
+    "categoryCode": "A4",
+    "categoryName": "Reporting and Communication",
+    "ref": "A4.4",
+    "question": "Are stakeholders provided with opportunities to give feedback on sustainability practices?",
+    "sortOrder": 16
+  },
+  {
+    "section": "A",
+    "categoryCode": "A5",
+    "categoryName": "Accurate Promotion",
+    "ref": "A5.1",
+    "question": "Do all promotional materials accurately represent the hotel's actual facilities and services?",
+    "sortOrder": 17
+  },
+  {
+    "section": "A",
+    "categoryCode": "A5",
+    "categoryName": "Accurate Promotion",
+    "ref": "A5.2",
+    "question": "Are sustainability claims supported by verifiable data and documentation?",
+    "sortOrder": 18
+  },
+  {
+    "section": "A",
+    "categoryCode": "A5",
+    "categoryName": "Accurate Promotion",
+    "ref": "A5.3",
+    "question": "Is information on sustainability commitments easily accessible to the public (via online, leaflets)?",
+    "sortOrder": 19
+  },
+  {
+    "section": "A",
+    "categoryCode": "A6",
+    "categoryName": "Information Sharing and Guidance",
+    "ref": "A6.1",
+    "question": "Does the hotel train staff on the destination’s natural environment, culture, and heritage?",
+    "sortOrder": 20
+  },
+  {
+    "section": "A",
+    "categoryCode": "A6",
+    "categoryName": "Information Sharing and Guidance",
+    "ref": "A6.2",
+    "question": "Is information on the destination’s characteristics readily available to guests?",
+    "sortOrder": 21
+  },
+  {
+    "section": "A",
+    "categoryCode": "A6",
+    "categoryName": "Information Sharing and Guidance",
+    "ref": "A6.3",
+    "question": "Are there documented behavioral guidelines for staff to promote respectful conduct?",
+    "sortOrder": 22
+  },
+  {
+    "section": "A",
+    "categoryCode": "A6",
+    "categoryName": "Information Sharing and Guidance",
+    "ref": "A6.4",
+    "question": "Are guests provided with guidelines encouraging respectful behavior in the hotel and community?",
+    "sortOrder": 23
+  },
+  {
+    "section": "A",
+    "categoryCode": "A6",
+    "categoryName": "Information Sharing and Guidance",
+    "ref": "A6.5",
+    "question": "Are environmentally responsible formats (e.g., digital) prioritized for sharing information?",
+    "sortOrder": 24
+  },
+  {
+    "section": "A",
+    "categoryCode": "A6",
+    "categoryName": "Information Sharing and Guidance",
+    "ref": "A6.6",
+    "question": "Is information available in languages relevant to both staff and guests?",
+    "sortOrder": 25
+  },
+  {
+    "section": "A",
+    "categoryCode": "A6",
+    "categoryName": "Information Sharing and Guidance",
+    "ref": "A6.7",
+    "question": "Is information provided in accessible formats for people with disabilities?",
+    "sortOrder": 26
+  },
+  {
+    "section": "A",
+    "categoryCode": "A7",
+    "categoryName": "Staff Engagement",
+    "ref": "A7.1",
+    "question": "Are staff engaged in developing and implementing the sustainability policy and action plans?",
+    "sortOrder": 27
+  },
+  {
+    "section": "A",
+    "categoryCode": "A7",
+    "categoryName": "Staff Engagement",
+    "ref": "A7.2",
+    "question": "Are sustainability roles and responsibilities clearly defined for staff members?",
+    "sortOrder": 28
+  },
+  {
+    "section": "A",
+    "categoryCode": "A7",
+    "categoryName": "Staff Engagement",
+    "ref": "A7.3",
+    "question": "Do staff receive orientation & structured training on sustainability basics and their specific roles?",
+    "sortOrder": 29
+  },
+  {
+    "section": "A",
+    "categoryCode": "A7",
+    "categoryName": "Staff Engagement",
+    "ref": "A7.4",
+    "question": "Does the hotel maintain records of training sessions, attendance lists, and materials?",
+    "sortOrder": 30
+  },
+  {
+    "section": "A",
+    "categoryCode": "A7",
+    "categoryName": "Staff Engagement",
+    "ref": "A7.5",
+    "question": "Are training and reference materials available in languages understood by all staff?",
+    "sortOrder": 31
+  },
+  {
+    "section": "A",
+    "categoryCode": "A7",
+    "categoryName": "Staff Engagement",
+    "ref": "A7.6",
+    "question": "Does the hotel support staff in obtaining job-related certifications or qualifications?",
+    "sortOrder": 32
+  },
+  {
+    "section": "A",
+    "categoryCode": "A7",
+    "categoryName": "Staff Engagement",
+    "ref": "A7.7",
+    "question": "Is staff engagement and feedback regularly reviewed and documented to improve participation?",
+    "sortOrder": 33
+  },
+  {
+    "section": "A",
+    "categoryCode": "A8",
+    "categoryName": "Guest Experience",
+    "ref": "A8.1",
+    "question": "Does the hotel maintain a system for gathering guest feedback?",
+    "sortOrder": 34
+  },
+  {
+    "section": "A",
+    "categoryCode": "A8",
+    "categoryName": "Guest Experience",
+    "ref": "A8.2",
+    "question": "Is feedback regularly collected and reviewed using methods appropriate to the hotel's size?",
+    "sortOrder": 35
+  },
+  {
+    "section": "A",
+    "categoryCode": "A8",
+    "categoryName": "Guest Experience",
+    "ref": "A8.3",
+    "question": "Are corrective actions taken and documented in response to identified issues or complaints?",
+    "sortOrder": 36
+  },
+  {
+    "section": "A",
+    "categoryCode": "A8",
+    "categoryName": "Guest Experience",
+    "ref": "A8.4",
+    "question": "Does the hotel notify guests about the corrective actions taken?",
+    "sortOrder": 37
+  },
+  {
+    "section": "A",
+    "categoryCode": "A8",
+    "categoryName": "Guest Experience",
+    "ref": "A8.5",
+    "question": "Does the hotel provide guests with clear guidance and opportunities to participate in sustainability practices?",
+    "sortOrder": 38
+  },
+  {
+    "section": "A",
+    "categoryCode": "A9",
+    "categoryName": "Collaboration with Stakeholders",
+    "ref": "A9",
+    "question": "Does the hotel maintain documented engagement with local stakeholders to align its sustainability goals with destination priorities?",
+    "sortOrder": 39
+  },
+  {
+    "section": "A",
+    "categoryCode": "A10",
+    "categoryName": "Land, Water and Property Rights",
+    "ref": "A10.1",
+    "question": "Does the hotel have all necessary legal documentation for land and water access and usage?",
+    "sortOrder": 40
+  },
+  {
+    "section": "A",
+    "categoryCode": "A10",
+    "categoryName": "Land, Water and Property Rights",
+    "ref": "A10.2",
+    "question": "Are local stakeholders consulted to address impacts of new projects or renovations?",
+    "sortOrder": 41
+  },
+  {
+    "section": "A",
+    "categoryCode": "A10",
+    "categoryName": "Land, Water and Property Rights",
+    "ref": "A10.3",
+    "question": "Does the hotel follow FPIC principles for projects affecting traditional communities?",
+    "sortOrder": 42
+  },
+  {
+    "section": "A",
+    "categoryCode": "A10",
+    "categoryName": "Land, Water and Property Rights",
+    "ref": "A10.4",
+    "question": "Is a grievance mechanism available for external stakeholders regarding land or water rights?",
+    "sortOrder": 43
+  },
+  {
+    "section": "A",
+    "categoryCode": "A10",
+    "categoryName": "Land, Water and Property Rights",
+    "ref": "A10.5",
+    "question": "Does the annual report confirm legal compliance for land and water use?",
+    "sortOrder": 44
+  },
+  {
+    "section": "A",
+    "categoryCode": "A11",
+    "categoryName": "Site Selection, Planning and Development",
+    "ref": "A11.1",
+    "question": "Are all required planning and construction permits obtained for new developments/renovations?",
+    "sortOrder": 45
+  },
+  {
+    "section": "A",
+    "categoryCode": "A11",
+    "categoryName": "Site Selection, Planning and Development",
+    "ref": "A11.2",
+    "question": "Are sustainability-related risk assessments conducted as an integral part of project planning?",
+    "sortOrder": 46
+  },
+  {
+    "section": "A",
+    "categoryCode": "A11",
+    "categoryName": "Site Selection, Planning and Development",
+    "ref": "A11.3",
+    "question": "Are site designs planned to protect the surrounding landscape and cultural or heritage sites?",
+    "sortOrder": 47
+  },
+  {
+    "section": "A",
+    "categoryCode": "A11",
+    "categoryName": "Site Selection, Planning and Development",
+    "ref": "A11.4",
+    "question": "Are measures implemented to preserve landscape and ecosystem connectivity?",
+    "sortOrder": 48
+  },
+  {
+    "section": "A",
+    "categoryCode": "A12",
+    "categoryName": "Buildings, Construction and Infrastructure",
+    "ref": "A12.1",
+    "question": "Does the hotel prioritize using qualified local labor for construction and development projects?",
+    "sortOrder": 49
+  },
+  {
+    "section": "A",
+    "categoryCode": "A12",
+    "categoryName": "Buildings, Construction and Infrastructure",
+    "ref": "A12.2",
+    "question": "Are locally sourced, low-impact, or certified sustainable materials and methods preferred?",
+    "sortOrder": 50
+  },
+  {
+    "section": "A",
+    "categoryCode": "A12",
+    "categoryName": "Buildings, Construction and Infrastructure",
+    "ref": "A12.3",
+    "question": "Are measures implemented to manage runoff and prevent contamination during construction?",
+    "sortOrder": 51
+  },
+  {
+    "section": "A",
+    "categoryCode": "A12",
+    "categoryName": "Buildings, Construction and Infrastructure",
+    "ref": "A12.4",
+    "question": "Are nearby watercourses protected and natural water flows preserved during construction?",
+    "sortOrder": 52
+  },
+  {
+    "section": "A",
+    "categoryCode": "A12",
+    "categoryName": "Buildings, Construction and Infrastructure",
+    "ref": "A12.5",
+    "question": "Are native plants prioritized and invasive species avoided in landscaping?",
+    "sortOrder": 53
+  },
+  {
+    "section": "A",
+    "categoryCode": "A12",
+    "categoryName": "Buildings, Construction and Infrastructure",
+    "ref": "A12.6",
+    "question": "Is construction waste managed responsibly through reduction, reuse, and recycling?",
+    "sortOrder": 54
+  },
+  {
+    "section": "A",
+    "categoryCode": "A13",
+    "categoryName": "Procurement",
+    "ref": "A13.1",
+    "question": "Is there a policy prioritizing fair, local, and eco-friendly products?",
+    "sortOrder": 55
+  },
+  {
+    "section": "A",
+    "categoryCode": "A13",
+    "categoryName": "Procurement",
+    "ref": "A13.2",
+    "question": "Are targets set for categories with high environmental or social impacts?",
+    "sortOrder": 56
+  },
+  {
+    "section": "A",
+    "categoryCode": "A13",
+    "categoryName": "Procurement",
+    "ref": "A13.3",
+    "question": "Are there targets for purchasing from local businesses?",
+    "sortOrder": 57
+  },
+  {
+    "section": "A",
+    "categoryCode": "A13",
+    "categoryName": "Procurement",
+    "ref": "A13.4",
+    "question": "Is preference given to fair-trade/ethical suppliers when local sourcing isn't possible?",
+    "sortOrder": 58
+  },
+  {
+    "section": "A",
+    "categoryCode": "A13",
+    "categoryName": "Procurement",
+    "ref": "A13.5",
+    "question": "Does the hotel prioritize reusable, returnable, and recycled materials?",
+    "sortOrder": 59
+  },
+  {
+    "section": "A",
+    "categoryCode": "A13",
+    "categoryName": "Procurement",
+    "ref": "A13.6",
+    "question": "Are there documented measures to eliminate single-use items?",
+    "sortOrder": 60
+  },
+  {
+    "section": "A",
+    "categoryCode": "A13",
+    "categoryName": "Procurement",
+    "ref": "A13.7",
+    "question": "Are marketing materials and signage electronic, reusable, or eco-friendly?",
+    "sortOrder": 61
+  },
+  {
+    "section": "A",
+    "categoryCode": "A13",
+    "categoryName": "Procurement",
+    "ref": "A13.8",
+    "question": "Is the purchase or sale of products from threatened species prohibited?",
+    "sortOrder": 62
+  },
+  {
+    "section": "A",
+    "categoryCode": "A13",
+    "categoryName": "Procurement",
+    "ref": "A13.9",
+    "question": "Are practices tracked using KPIs (e.g., % local, eco-friendly, or fair-trade)?",
+    "sortOrder": 63
+  },
+  {
+    "section": "A",
+    "categoryCode": "A13",
+    "categoryName": "Procurement",
+    "ref": "A13.10",
+    "question": "Are sustainability indicators included in supplier evaluation?",
+    "sortOrder": 64
+  },
+  {
+    "section": "A",
+    "categoryCode": "A13",
+    "categoryName": "Procurement",
+    "ref": "A13.11",
+    "question": "Is preference given to suppliers who document environmental reduction steps?",
+    "sortOrder": 65
+  },
+  {
+    "section": "A",
+    "categoryCode": "A13",
+    "categoryName": "Procurement",
+    "ref": "A13.12",
+    "question": "Do supplier agreements include sustainability-related requirements?",
+    "sortOrder": 66
+  },
+  {
+    "section": "A",
+    "categoryCode": "A13",
+    "categoryName": "Procurement",
+    "ref": "A13.13",
+    "question": "Is supplier compliance reviewed during selection and renewal?",
+    "sortOrder": 67
+  },
+  {
+    "section": "A",
+    "categoryCode": "A13",
+    "categoryName": "Procurement",
+    "ref": "A13.14",
+    "question": "Is due diligence conducted for products sourced from the wild?",
+    "sortOrder": 68
+  },
+  {
+    "section": "A",
+    "categoryCode": "A14",
+    "categoryName": "Food and Beverages",
+    "ref": "A14.1",
+    "question": "Are plant-based, vegetarian, or vegan options provided and clearly labeled?",
+    "sortOrder": 69
+  },
+  {
+    "section": "A",
+    "categoryCode": "A14",
+    "categoryName": "Food and Beverages",
+    "ref": "A14.2",
+    "question": "If the hotel lacks dining services, are nearby sustainable food providers recommended?",
+    "sortOrder": 70
+  },
+  {
+    "section": "A",
+    "categoryCode": "A14",
+    "categoryName": "Food and Beverages",
+    "ref": "A14.3",
+    "question": "Is preference given to local or certified organic/fair-trade plant-based ingredients?",
+    "sortOrder": 71
+  },
+  {
+    "section": "A",
+    "categoryCode": "A14",
+    "categoryName": "Food and Beverages",
+    "ref": "A14.4",
+    "question": "Are practices implemented in kitchens and dining areas to minimize food waste?",
+    "sortOrder": 72
+  },
+  {
+    "section": "B",
+    "categoryCode": "B1",
+    "categoryName": "Community Support",
+    "ref": "B1.1",
+    "question": "Does the hotel provide ongoing financial or in-kind support to local community projects?",
+    "sortOrder": 73
+  },
+  {
+    "section": "B",
+    "categoryCode": "B1",
+    "categoryName": "Community Support",
+    "ref": "B1.2",
+    "question": "Are the level and nature of all community contributions recorded and monitored?",
+    "sortOrder": 74
+  },
+  {
+    "section": "B",
+    "categoryCode": "B1",
+    "categoryName": "Community Support",
+    "ref": "B1.3",
+    "question": "Does the hotel offer programs or cooperation specifically aimed at increasing local employability?",
+    "sortOrder": 75
+  },
+  {
+    "section": "B",
+    "categoryCode": "B2",
+    "categoryName": "Local Employment",
+    "ref": "B2.1",
+    "question": "Is there a written policy committing to fair and equitable employment for local residents?",
+    "sortOrder": 76
+  },
+  {
+    "section": "B",
+    "categoryCode": "B2",
+    "categoryName": "Local Employment",
+    "ref": "B2.2",
+    "question": "Are recruitment practices for permanent and temporary staff transparent and inclusive?",
+    "sortOrder": 77
+  },
+  {
+    "section": "B",
+    "categoryCode": "B2",
+    "categoryName": "Local Employment",
+    "ref": "B2.3",
+    "question": "Does the hotel monitor the proportion of local staff in both general and management roles?",
+    "sortOrder": 78
+  },
+  {
+    "section": "B",
+    "categoryCode": "B2",
+    "categoryName": "Local Employment",
+    "ref": "B2.4",
+    "question": "Does the hotel give preference to suppliers who support local employment?",
+    "sortOrder": 79
+  },
+  {
+    "section": "B",
+    "categoryCode": "B3",
+    "categoryName": "Local Entrepreneur Support",
+    "ref": "B3.1",
+    "question": "Does the hotel support local entrepreneurs in developing products and maintain a list?",
+    "sortOrder": 80
+  },
+  {
+    "section": "B",
+    "categoryCode": "B3",
+    "categoryName": "Local Entrepreneur Support",
+    "ref": "B3.2",
+    "question": "Are local entrepreneur products and services promoted to guests?",
+    "sortOrder": 81
+  },
+  {
+    "section": "B",
+    "categoryCode": "B4",
+    "categoryName": "Community Services and Livelihoods",
+    "ref": "B4.1",
+    "question": "Do operations avoid restricting local access to essential livelihoods?",
+    "sortOrder": 82
+  },
+  {
+    "section": "B",
+    "categoryCode": "B4",
+    "categoryName": "Community Services and Livelihoods",
+    "ref": "B4.2",
+    "question": "Are rights-of-way and local transportation routes kept unimpeded?",
+    "sortOrder": 83
+  },
+  {
+    "section": "B",
+    "categoryCode": "B4",
+    "categoryName": "Community Services and Livelihoods",
+    "ref": "B4.3",
+    "question": "Do hotel activities ensure unrestricted access to local homes?",
+    "sortOrder": 84
+  },
+  {
+    "section": "B",
+    "categoryCode": "B4",
+    "categoryName": "Community Services and Livelihoods",
+    "ref": "B4.4",
+    "question": "Is a system in place for local communities to address grievances?",
+    "sortOrder": 85
+  },
+  {
+    "section": "B",
+    "categoryCode": "B4",
+    "categoryName": "Community Services and Livelihoods",
+    "ref": "B4.5",
+    "question": "Are reported issues addressed promptly and outcomes shared?",
+    "sortOrder": 86
+  },
+  {
+    "section": "B",
+    "categoryCode": "B5",
+    "categoryName": "Access for All",
+    "ref": "B5.1",
+    "question": "Are key areas of the premises accessible for people with physical and neurodivergent needs?",
+    "sortOrder": 87
+  },
+  {
+    "section": "B",
+    "categoryCode": "B5",
+    "categoryName": "Access for All",
+    "ref": "B5.2",
+    "question": "Does the hotel maintain a plan for the continuous improvement of accessibility?",
+    "sortOrder": 88
+  },
+  {
+    "section": "B",
+    "categoryCode": "B5",
+    "categoryName": "Access for All",
+    "ref": "B5.3",
+    "question": "Are specific accessibility details and request options provided before booking and arrival?",
+    "sortOrder": 89
+  },
+  {
+    "section": "B",
+    "categoryCode": "B5",
+    "categoryName": "Access for All",
+    "ref": "B5.4",
+    "question": "Are communication materials provided in accessible formats to ensure clarity for all guests?",
+    "sortOrder": 90
+  },
+  {
+    "section": "B",
+    "categoryCode": "B5",
+    "categoryName": "Access for All",
+    "ref": "B5.5",
+    "question": "Are people with disabilities involved in developing and improving accessibility features?",
+    "sortOrder": 91
+  },
+  {
+    "section": "B",
+    "categoryCode": "B5",
+    "categoryName": "Access for All",
+    "ref": "B5.6",
+    "question": "Does furniture selection and placement exceed local laws to better support accessibility?",
+    "sortOrder": 92
+  },
+  {
+    "section": "B",
+    "categoryCode": "B6",
+    "categoryName": "Code of Conduct",
+    "ref": "B6.1",
+    "question": "Does the hotel have a code of conduct with zero-tolerance for exploitation, harassment etc?",
+    "sortOrder": 93
+  },
+  {
+    "section": "B",
+    "categoryCode": "B6",
+    "categoryName": "Code of Conduct",
+    "ref": "B6.2",
+    "question": "Are there safeguards to prevent inappropriate interactions with minors, students, and interns?",
+    "sortOrder": 94
+  },
+  {
+    "section": "B",
+    "categoryCode": "B6",
+    "categoryName": "Code of Conduct",
+    "ref": "B6.3",
+    "question": "Are there documented behavioral guidelines for staff to promote respectful conduct?",
+    "sortOrder": 95
+  },
+  {
+    "section": "B",
+    "categoryCode": "B6",
+    "categoryName": "Code of Conduct",
+    "ref": "B6.4",
+    "question": "Does the code guide respectful, non-discriminatory interactions with marginalized groups?",
+    "sortOrder": 96
+  },
+  {
+    "section": "B",
+    "categoryCode": "B6",
+    "categoryName": "Code of Conduct",
+    "ref": "B6.5",
+    "question": "Is the code of conduct regularly updated and communicated to all staff?",
+    "sortOrder": 97
+  },
+  {
+    "section": "B",
+    "categoryCode": "B6",
+    "categoryName": "Code of Conduct",
+    "ref": "B6.6",
+    "question": "Is regular training on the code provided to all staff and documented in training records?",
+    "sortOrder": 98
+  },
+  {
+    "section": "B",
+    "categoryCode": "B7",
+    "categoryName": "Exploitation, Harassment and Human Trafficking",
+    "ref": "B7.1",
+    "question": "Is there a written policy to identify, report, and respond to exploitation and trafficking?",
+    "sortOrder": 99
+  },
+  {
+    "section": "B",
+    "categoryCode": "B7",
+    "categoryName": "Exploitation, Harassment and Human Trafficking",
+    "ref": "B7.2",
+    "question": "Is this policy communicated to staff, guests, and suppliers?",
+    "sortOrder": 100
+  },
+  {
+    "section": "B",
+    "categoryCode": "B7",
+    "categoryName": "Exploitation, Harassment and Human Trafficking",
+    "ref": "B7.3",
+    "question": "Does the hotel monitor the policy's implementation to ensure compliance?",
+    "sortOrder": 101
+  },
+  {
+    "section": "B",
+    "categoryCode": "B7",
+    "categoryName": "Exploitation, Harassment and Human Trafficking",
+    "ref": "B7.4",
+    "question": "Is training provided on recognizing and reporting incidents of exploitation and harassment?",
+    "sortOrder": 102
+  },
+  {
+    "section": "B",
+    "categoryCode": "B7",
+    "categoryName": "Exploitation, Harassment and Human Trafficking",
+    "ref": "B7.5",
+    "question": "Are records maintained to prove no child or illegal labor is employed?",
+    "sortOrder": 103
+  },
+  {
+    "section": "B",
+    "categoryCode": "B7",
+    "categoryName": "Exploitation, Harassment and Human Trafficking",
+    "ref": "B7.6",
+    "question": "Are suppliers required to comply with this policy through contracts and evaluations?",
+    "sortOrder": 104
+  },
+  {
+    "section": "B",
+    "categoryCode": "B8",
+    "categoryName": "Employment Inclusion and Equality",
+    "ref": "B8.1",
+    "question": "Is there a written policy prohibiting discrimination based on all non-merit characteristics?",
+    "sortOrder": 105
+  },
+  {
+    "section": "B",
+    "categoryCode": "B8",
+    "categoryName": "Employment Inclusion and Equality",
+    "ref": "B8.2",
+    "question": "Is the inclusive employment policy regularly reviewed and updated?",
+    "sortOrder": 106
+  },
+  {
+    "section": "B",
+    "categoryCode": "B8",
+    "categoryName": "Employment Inclusion and Equality",
+    "ref": "B8.3",
+    "question": "Are groups at risk of discrimination identified and reflected in HR practices?",
+    "sortOrder": 107
+  },
+  {
+    "section": "B",
+    "categoryCode": "B8",
+    "categoryName": "Employment Inclusion and Equality",
+    "ref": "B8.4",
+    "question": "Is training provided to staff on recognizing and addressing bias and discrimination?",
+    "sortOrder": 108
+  },
+  {
+    "section": "B",
+    "categoryCode": "B8",
+    "categoryName": "Employment Inclusion and Equality",
+    "ref": "B8.5",
+    "question": "Is equal employment opportunity implementation monitored across all positions?",
+    "sortOrder": 109
+  },
+  {
+    "section": "B",
+    "categoryCode": "B9",
+    "categoryName": "Decent Work",
+    "ref": "B9.1",
+    "question": "Does the hotel comply with national labor laws and ILO standards for all staff?",
+    "sortOrder": 110
+  },
+  {
+    "section": "B",
+    "categoryCode": "B9",
+    "categoryName": "Decent Work",
+    "ref": "B9.2",
+    "question": "Do directly employed staff have access to health, medical, and social security?",
+    "sortOrder": 111
+  },
+  {
+    "section": "B",
+    "categoryCode": "B9",
+    "categoryName": "Decent Work",
+    "ref": "B9.3",
+    "question": "Do all staff, including contract workers, receive at least the legal minimum wage?",
+    "sortOrder": 112
+  },
+  {
+    "section": "B",
+    "categoryCode": "B9",
+    "categoryName": "Decent Work",
+    "ref": "B9.4",
+    "question": "Is there an annual wage review process based on measurable performance criteria?",
+    "sortOrder": 113
+  },
+  {
+    "section": "B",
+    "categoryCode": "B9",
+    "categoryName": "Decent Work",
+    "ref": "B9.5",
+    "question": "Is role-specific training provided with clear pathways for career advancement?",
+    "sortOrder": 114
+  },
+  {
+    "section": "B",
+    "categoryCode": "B9",
+    "categoryName": "Decent Work",
+    "ref": "B9.6",
+    "question": "Is staff satisfaction regularly monitored through surveys or feedback mechanisms?",
+    "sortOrder": 115
+  },
+  {
+    "section": "B",
+    "categoryCode": "B9",
+    "categoryName": "Decent Work",
+    "ref": "B9.7",
+    "question": "Is there a safe and confidential grievance system in place for all staff?",
+    "sortOrder": 116
+  },
+  {
+    "section": "C",
+    "categoryCode": "C1",
+    "categoryName": "Cultural Interactions",
+    "ref": "C1.1",
+    "question": "Are guests provided with educational materials on local culture to ensure respectful interactions?",
+    "sortOrder": 117
+  },
+  {
+    "section": "C",
+    "categoryCode": "C1",
+    "categoryName": "Cultural Interactions",
+    "ref": "C1.2",
+    "question": "Do guest-facing staff receive specific training on local customs, traditions, and etiquette?",
+    "sortOrder": 118
+  },
+  {
+    "section": "C",
+    "categoryCode": "C1",
+    "categoryName": "Cultural Interactions",
+    "ref": "C1.3",
+    "question": "Is there a channel for local communities to raise concerns or report impacts?",
+    "sortOrder": 119
+  },
+  {
+    "section": "C",
+    "categoryCode": "C1",
+    "categoryName": "Cultural Interactions",
+    "ref": "C1.4",
+    "question": "Does the hotel regularly review and address all cultural feedback?",
+    "sortOrder": 120
+  },
+  {
+    "section": "C",
+    "categoryCode": "C2",
+    "categoryName": "Protecting Cultural Heritage",
+    "ref": "C2.1",
+    "question": "Does the hotel contribute resources or collaborate to protect local cultural heritage?",
+    "sortOrder": 121
+  },
+  {
+    "section": "C",
+    "categoryCode": "C2",
+    "categoryName": "Protecting Cultural Heritage",
+    "ref": "C2.2",
+    "question": "Do hotel operations ensure local residents' access to cultural sites is not impeded?",
+    "sortOrder": 122
+  },
+  {
+    "section": "C",
+    "categoryCode": "C3",
+    "categoryName": "Presenting Culture and Heritage",
+    "ref": "C3.1",
+    "question": "Does the hotel integrate art or design elements created by local artisans into its spaces?",
+    "sortOrder": 123
+  },
+  {
+    "section": "C",
+    "categoryCode": "C3",
+    "categoryName": "Presenting Culture and Heritage",
+    "ref": "C3.2",
+    "question": "Are cultural heritage elements, such as music or crafts, legally incorporated into operations?",
+    "sortOrder": 124
+  },
+  {
+    "section": "C",
+    "categoryCode": "C3",
+    "categoryName": "Presenting Culture and Heritage",
+    "ref": "C3.3",
+    "question": "Does the hotel respect IP rights and obtain permissions for cultural presentations?",
+    "sortOrder": 125
+  },
+  {
+    "section": "C",
+    "categoryCode": "C3",
+    "categoryName": "Presenting Culture and Heritage",
+    "ref": "C3.4",
+    "question": "Are experts consulted before presenting sensitive or Indigenous heritage?",
+    "sortOrder": 126
+  },
+  {
+    "section": "C",
+    "categoryCode": "C4",
+    "categoryName": "Artifacts",
+    "ref": "C4.1",
+    "question": "Is the sustainability policy communicated to staff, guests, and suppliers?",
+    "sortOrder": 127
+  },
+  {
+    "section": "C",
+    "categoryCode": "C4",
+    "categoryName": "Artifacts",
+    "ref": "C4.2",
+    "question": "Does the hotel publish a publicly accessible annual sustainability report?",
+    "sortOrder": 128
+  },
+  {
+    "section": "D",
+    "categoryCode": "D1",
+    "categoryName": "Energy Conservation",
+    "ref": "D1.1",
+    "question": "Does the hotel measure total energy consumption by type and per guest night or occupied room?",
+    "sortOrder": 129
+  },
+  {
+    "section": "D",
+    "categoryCode": "D1",
+    "categoryName": "Energy Conservation",
+    "ref": "D1.2",
+    "question": "Does the hotel use renewable energy where available and report the proportion annually?",
+    "sortOrder": 130
+  },
+  {
+    "section": "D",
+    "categoryCode": "D1",
+    "categoryName": "Energy Conservation",
+    "ref": "D1.3",
+    "question": "Is there a channel for local communities to raise concerns or report impacts?",
+    "sortOrder": 131
+  },
+  {
+    "section": "D",
+    "categoryCode": "D1",
+    "categoryName": "Energy Conservation",
+    "ref": "D1.4",
+    "question": "Are energy-saving steps like efficient lighting and HVAC controls implemented?",
+    "sortOrder": 132
+  },
+  {
+    "section": "D",
+    "categoryCode": "D1",
+    "categoryName": "Energy Conservation",
+    "ref": "D1.5",
+    "question": "Is energy equipment regularly maintained to ensure efficiency?",
+    "sortOrder": 133
+  },
+  {
+    "section": "D",
+    "categoryCode": "D1",
+    "categoryName": "Energy Conservation",
+    "ref": "D1.6",
+    "question": "Is non-renewable fuel use for outdoor heating/cooling minimized?",
+    "sortOrder": 134
+  },
+  {
+    "section": "D",
+    "categoryCode": "D1",
+    "categoryName": "Energy Conservation",
+    "ref": "D1.7",
+    "question": "Are staff and contractors trained on energy-saving practices?",
+    "sortOrder": 135
+  },
+  {
+    "section": "D",
+    "categoryCode": "D1",
+    "categoryName": "Energy Conservation",
+    "ref": "D1.8",
+    "question": "Does the hotel communicate its energy policy and practices to guests?",
+    "sortOrder": 136
+  },
+  {
+    "section": "D",
+    "categoryCode": "D2",
+    "categoryName": "Water Conservation",
+    "ref": "D2.1",
+    "question": "Is the destination’s water risk level identified and documented?",
+    "sortOrder": 137
+  },
+  {
+    "section": "D",
+    "categoryCode": "D2",
+    "categoryName": "Water Conservation",
+    "ref": "D2.2",
+    "question": "Is the water supply legal and safe for local environmental flows?",
+    "sortOrder": 138
+  },
+  {
+    "section": "D",
+    "categoryCode": "D2",
+    "categoryName": "Water Conservation",
+    "ref": "D2.3",
+    "question": "Is water use measured by source and per guest night or room?",
+    "sortOrder": 139
+  },
+  {
+    "section": "D",
+    "categoryCode": "D2",
+    "categoryName": "Water Conservation",
+    "ref": "D2.4",
+    "question": "Are annual targets set and tracked to reduce water consumption?",
+    "sortOrder": 140
+  },
+  {
+    "section": "D",
+    "categoryCode": "D2",
+    "categoryName": "Water Conservation",
+    "ref": "D2.5",
+    "question": "Are water-efficient fixtures and appliances installed and used?",
+    "sortOrder": 141
+  },
+  {
+    "section": "D",
+    "categoryCode": "D2",
+    "categoryName": "Water Conservation",
+    "ref": "D2.6",
+    "question": "Is outdoor water use for irrigation and cleaning optimized?",
+    "sortOrder": 142
+  },
+  {
+    "section": "D",
+    "categoryCode": "D2",
+    "categoryName": "Water Conservation",
+    "ref": "D2.7",
+    "question": "Is a guest linen reuse program implemented and monitored?",
+    "sortOrder": 143
+  },
+  {
+    "section": "D",
+    "categoryCode": "D2",
+    "categoryName": "Water Conservation",
+    "ref": "D2.8",
+    "question": "Are staff and contractors trained on water-saving practices?",
+    "sortOrder": 144
+  },
+  {
+    "section": "D",
+    "categoryCode": "D2",
+    "categoryName": "Water Conservation",
+    "ref": "D2.9",
+    "question": "Are water policies and saving practices communicated to guests?",
+    "sortOrder": 145
+  },
+  {
+    "section": "D",
+    "categoryCode": "D3",
+    "categoryName": "Greenhouse Gas Emissions",
+    "ref": "D3.1",
+    "question": "Has the hotel publicly committed to reducing GHG emissions?",
+    "sortOrder": 146
+  },
+  {
+    "section": "D",
+    "categoryCode": "D3",
+    "categoryName": "Greenhouse Gas Emissions",
+    "ref": "D3.2",
+    "question": "Are annual targets set for Scope 1 and Scope 2 reductions?",
+    "sortOrder": 147
+  },
+  {
+    "section": "D",
+    "categoryCode": "D3",
+    "categoryName": "Greenhouse Gas Emissions",
+    "ref": "D3.3",
+    "question": "Are Scope 1 and Scope 2 emissions tracked annually?",
+    "sortOrder": 148
+  },
+  {
+    "section": "D",
+    "categoryCode": "D3",
+    "categoryName": "Greenhouse Gas Emissions",
+    "ref": "D3.4",
+    "question": "Are actions implemented to minimize operational emissions?",
+    "sortOrder": 149
+  },
+  {
+    "section": "D",
+    "categoryCode": "D3",
+    "categoryName": "Greenhouse Gas Emissions",
+    "ref": "D3.5",
+    "question": "Are Scope 1,2 and available Scope 3 emissions disclosed in the annual sustainability report?",
+    "sortOrder": 150
+  },
+  {
+    "section": "D",
+    "categoryCode": "D3",
+    "categoryName": "Greenhouse Gas Emissions",
+    "ref": "D3.6",
+    "question": "Are remaining emissions offset after reduction measures?",
+    "sortOrder": 151
+  },
+  {
+    "section": "D",
+    "categoryCode": "D3",
+    "categoryName": "Greenhouse Gas Emissions",
+    "ref": "D3.7",
+    "question": "Is there a strategy to transition away from harmful coolants?",
+    "sortOrder": 152
+  },
+  {
+    "section": "D",
+    "categoryCode": "D4",
+    "categoryName": "Transportation",
+    "ref": "D4.1",
+    "question": "Does the hotel prioritize eco friendly and efficient transportation options for its own operations?",
+    "sortOrder": 153
+  },
+  {
+    "section": "D",
+    "categoryCode": "D4",
+    "categoryName": "Transportation",
+    "ref": "D4.2",
+    "question": "Are staff commute options like carsharing/pickups provided?",
+    "sortOrder": 154
+  },
+  {
+    "section": "D",
+    "categoryCode": "D4",
+    "categoryName": "Transportation",
+    "ref": "D4.3",
+    "question": "Are electric vehicle charging stations available for guests and staff?",
+    "sortOrder": 155
+  },
+  {
+    "section": "D",
+    "categoryCode": "D4",
+    "categoryName": "Transportation",
+    "ref": "D4.4",
+    "question": "Is bicycle storage provided for guests and staff where feasible?",
+    "sortOrder": 156
+  },
+  {
+    "section": "D",
+    "categoryCode": "D4",
+    "categoryName": "Transportation",
+    "ref": "D4.5",
+    "question": "Is information on alternative transport options provided to guests?",
+    "sortOrder": 157
+  },
+  {
+    "section": "D",
+    "categoryCode": "D5",
+    "categoryName": "Wastewater",
+    "ref": "D5.1",
+    "question": "Does the hotel comply with all applicable local and national wastewater regulations?",
+    "sortOrder": 158
+  },
+  {
+    "section": "D",
+    "categoryCode": "D5",
+    "categoryName": "Wastewater",
+    "ref": "D5.2",
+    "question": "Is safe wastewater discharge documented in line with legal and environmental standards?",
+    "sortOrder": 159
+  },
+  {
+    "section": "D",
+    "categoryCode": "D5",
+    "categoryName": "Wastewater",
+    "ref": "D5.3",
+    "question": "Are water-reuse initiatives like greywater recycling implemented where feasible?",
+    "sortOrder": 160
+  },
+  {
+    "section": "D",
+    "categoryCode": "D5",
+    "categoryName": "Wastewater",
+    "ref": "D5.4",
+    "question": "Is technical staff trained on proper wastewater management and disposal guidelines?",
+    "sortOrder": 161
+  },
+  {
+    "section": "D",
+    "categoryCode": "D6",
+    "categoryName": "Solid Waste",
+    "ref": "D6.1",
+    "question": "Does the hotel have a written policy committing to waste reduction?",
+    "sortOrder": 162
+  },
+  {
+    "section": "D",
+    "categoryCode": "D6",
+    "categoryName": "Solid Waste",
+    "ref": "D6.2",
+    "question": "Is a solid waste management plan in place that prioritizes the Waste Hierarchy?",
+    "sortOrder": 163
+  },
+  {
+    "section": "D",
+    "categoryCode": "D6",
+    "categoryName": "Solid Waste",
+    "ref": "D6.3",
+    "question": "Is total solid waste measured by type per guest night or occupied room?",
+    "sortOrder": 164
+  },
+  {
+    "section": "D",
+    "categoryCode": "D6",
+    "categoryName": "Solid Waste",
+    "ref": "D6.4",
+    "question": "Are annual targets set and tracked to reduce solid waste generation?",
+    "sortOrder": 165
+  },
+  {
+    "section": "D",
+    "categoryCode": "D6",
+    "categoryName": "Solid Waste",
+    "ref": "D6.5",
+    "question": "Is basic waste-segregation infrastructure provided in common areas?",
+    "sortOrder": 166
+  },
+  {
+    "section": "D",
+    "categoryCode": "D6",
+    "categoryName": "Solid Waste",
+    "ref": "D6.6",
+    "question": "Are single-use items like plastics monitored and actively reduced or eliminated?",
+    "sortOrder": 167
+  },
+  {
+    "section": "D",
+    "categoryCode": "D6",
+    "categoryName": "Solid Waste",
+    "ref": "D6.7",
+    "question": "Is non-recovered waste disposed of through legally authorized pathways?",
+    "sortOrder": 168
+  },
+  {
+    "section": "D",
+    "categoryCode": "D6",
+    "categoryName": "Solid Waste",
+    "ref": "D6.8",
+    "question": "Are staff trained on waste minimization and proper sorting procedures?",
+    "sortOrder": 169
+  },
+  {
+    "section": "D",
+    "categoryCode": "D6",
+    "categoryName": "Solid Waste",
+    "ref": "D6.9",
+    "question": "Is waste minimization and sorting information provided to guests?",
+    "sortOrder": 170
+  },
+  {
+    "section": "D",
+    "categoryCode": "D7",
+    "categoryName": "Harmful Substances",
+    "ref": "D7.1",
+    "question": "Is an updated inventory and Safety Data Sheets (SDS) maintained for all harmful substances?",
+    "sortOrder": 171
+  },
+  {
+    "section": "D",
+    "categoryCode": "D7",
+    "categoryName": "Harmful Substances",
+    "ref": "D7.2",
+    "question": "Is chemical usage monitored to identify patterns and substitution opportunities?",
+    "sortOrder": 172
+  },
+  {
+    "section": "D",
+    "categoryCode": "D7",
+    "categoryName": "Harmful Substances",
+    "ref": "D7.3",
+    "question": "Are targets set to replace harmful substances with certified eco-friendly alternatives?",
+    "sortOrder": 173
+  },
+  {
+    "section": "D",
+    "categoryCode": "D7",
+    "categoryName": "Harmful Substances",
+    "ref": "D7.4",
+    "question": "Are chemicals stored, handled, and disposed of in compliance with safety regulations?",
+    "sortOrder": 174
+  },
+  {
+    "section": "D",
+    "categoryCode": "D7",
+    "categoryName": "Harmful Substances",
+    "ref": "D7.5",
+    "question": "Is staff trained on the safe handling, storage, and disposal of chemical products?",
+    "sortOrder": 175
+  },
+  {
+    "section": "D",
+    "categoryCode": "D7",
+    "categoryName": "Harmful Substances",
+    "ref": "D7.6",
+    "question": "Are guests informed about using less harmful personal care products?",
+    "sortOrder": 176
+  },
+  {
+    "section": "D",
+    "categoryCode": "D8",
+    "categoryName": "Minimise Pollution",
+    "ref": "D8.1",
+    "question": "Has the hotel identified potential pollution sources relevant to its location and operations?",
+    "sortOrder": 177
+  },
+  {
+    "section": "D",
+    "categoryCode": "D8",
+    "categoryName": "Minimise Pollution",
+    "ref": "D8.2",
+    "question": "Are measures in place to prevent pollution from these sources?",
+    "sortOrder": 178
+  },
+  {
+    "section": "D",
+    "categoryCode": "D8",
+    "categoryName": "Minimise Pollution",
+    "ref": "D8.3",
+    "question": "Are pollution levels monitored to ensure controls are effective?",
+    "sortOrder": 179
+  },
+  {
+    "section": "D",
+    "categoryCode": "D8",
+    "categoryName": "Minimise Pollution",
+    "ref": "D8.4",
+    "question": "Is operational noise managed to minimize disturbance to guests?",
+    "sortOrder": 180
+  },
+  {
+    "section": "D",
+    "categoryCode": "D8",
+    "categoryName": "Minimise Pollution",
+    "ref": "D8.5",
+    "question": "Are measures taken to minimize light pollution in sensitive areas?",
+    "sortOrder": 181
+  },
+  {
+    "section": "D",
+    "categoryCode": "D8",
+    "categoryName": "Minimise Pollution",
+    "ref": "D8.6",
+    "question": "Is smoking restricted to designated outdoor or ventilated areas?",
+    "sortOrder": 182
+  },
+  {
+    "section": "D",
+    "categoryCode": "D9",
+    "categoryName": "Biodiversity Conservation",
+    "ref": "D9.1",
+    "question": "Does the hotel has a list of nationally protected species?",
+    "sortOrder": 183
+  },
+  {
+    "section": "D",
+    "categoryCode": "D9",
+    "categoryName": "Biodiversity Conservation",
+    "ref": "D9.2",
+    "question": "Is there a strategy to manage impacts on nearby sensitive areas?",
+    "sortOrder": 184
+  },
+  {
+    "section": "D",
+    "categoryCode": "D9",
+    "categoryName": "Biodiversity Conservation",
+    "ref": "D9.3",
+    "question": "Are financial or in-kind contributions to biodiversity recorded?",
+    "sortOrder": 185
+  },
+  {
+    "section": "D",
+    "categoryCode": "D9",
+    "categoryName": "Biodiversity Conservation",
+    "ref": "D9.4",
+    "question": "Is the property actively managed to support biodiversity?",
+    "sortOrder": 186
+  },
+  {
+    "section": "D",
+    "categoryCode": "D9",
+    "categoryName": "Biodiversity Conservation",
+    "ref": "D9.5",
+    "question": "Are local biodiversity conservation efforts prioritized?",
+    "sortOrder": 187
+  },
+  {
+    "section": "D",
+    "categoryCode": "D10",
+    "categoryName": "Invasive Species",
+    "ref": "D10.1",
+    "question": "Is there a documented list of locally relevant invasive species?",
+    "sortOrder": 188
+  },
+  {
+    "section": "D",
+    "categoryCode": "D10",
+    "categoryName": "Invasive Species",
+    "ref": "D10.2",
+    "question": "Are detected invasive species promptly reported and removed?",
+    "sortOrder": 189
+  },
+  {
+    "section": "D",
+    "categoryCode": "D10",
+    "categoryName": "Invasive Species",
+    "ref": "D10.3",
+    "question": "Do landscaping practices prevent the introduction of invasive plants?",
+    "sortOrder": 190
+  },
+  {
+    "section": "D",
+    "categoryCode": "D10",
+    "categoryName": "Invasive Species",
+    "ref": "D10.4",
+    "question": "Is there a plant inventory that prioritizes native/endemic species?",
+    "sortOrder": 191
+  },
+  {
+    "section": "D",
+    "categoryCode": "D11",
+    "categoryName": "Interactions with Animals",
+    "ref": "D11.1",
+    "question": "Do wildlife tour providers comply with welfare and safety regulations?",
+    "sortOrder": 192
+  },
+  {
+    "section": "D",
+    "categoryCode": "D11",
+    "categoryName": "Interactions with Animals",
+    "ref": "D11.2",
+    "question": "Are safety protocols in place for on-site animal interactions?",
+    "sortOrder": 193
+  },
+  {
+    "section": "D",
+    "categoryCode": "D11",
+    "categoryName": "Interactions with Animals",
+    "ref": "D11.3",
+    "question": "Is close contact with wild animals (feeding, touching) strictly prohibited?",
+    "sortOrder": 194
+  },
+  {
+    "section": "D",
+    "categoryCode": "D11",
+    "categoryName": "Interactions with Animals",
+    "ref": "D11.4",
+    "question": "Are guests provided with guidelines for responsible wildlife interactions?",
+    "sortOrder": 195
+  },
+  {
+    "section": "D",
+    "categoryCode": "D12",
+    "categoryName": "Animal Welfare",
+    "ref": "D12.1",
+    "question": "Are necessary licenses maintained for any owned or managed animals?",
+    "sortOrder": 196
+  },
+  {
+    "section": "D",
+    "categoryCode": "D12",
+    "categoryName": "Animal Welfare",
+    "ref": "D12.2",
+    "question": "Does animal housing and care comply with all relevant regulations?",
+    "sortOrder": 197
+  },
+  {
+    "section": "D",
+    "categoryCode": "D12",
+    "categoryName": "Animal Welfare",
+    "ref": "D12.3",
+    "question": "Are qualified personnel used to manage any animals on-site?",
+    "sortOrder": 198
+  },
+  {
+    "section": "D",
+    "categoryCode": "D12",
+    "categoryName": "Animal Welfare",
+    "ref": "D12.4",
+    "question": "Are animal welfare and well-being records regularly maintained?",
+    "sortOrder": 199
+  },
+  {
+    "section": "D",
+    "categoryCode": "D12",
+    "categoryName": "Animal Welfare",
+    "ref": "D12.5",
+    "question": "Are practices that compromise animal welfare or cause stress strictly avoided?",
+    "sortOrder": 200
+  },
+  {
+    "section": "D",
+    "categoryCode": "D13",
+    "categoryName": "Wildlife Harvesting and Trade",
+    "ref": "D13.1",
+    "question": "Is there a maintained list of nationally protected wildlife species?",
+    "sortOrder": 201
+  },
+  {
+    "section": "D",
+    "categoryCode": "D13",
+    "categoryName": "Wildlife Harvesting and Trade",
+    "ref": "D13.2",
+    "question": "Are guests/staff guided against buying or using illegal wildlife souvenirs?",
+    "sortOrder": 202
+  },
+  {
+    "section": "D",
+    "categoryCode": "D13",
+    "categoryName": "Wildlife Harvesting and Trade",
+    "ref": "D13.3",
+    "question": "Is the hotel strictly free from illegal wildlife trade, harvesting, or consumption?",
+    "sortOrder": 203
+  }
+]

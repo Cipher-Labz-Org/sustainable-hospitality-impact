@@ -1,0 +1,15 @@
+services:
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: gstc
+      POSTGRES_PASSWORD: gstc
+      POSTGRES_DB: gstc
+    ports:
+      - "5432:5432"
+    volumes:
+      - gstc_pg_data:/var/lib/postgresql/data
+
+volumes:
+  gstc_pg_data:

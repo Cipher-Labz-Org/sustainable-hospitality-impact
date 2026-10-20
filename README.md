@@ -1,36 +1,72 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# GSTC Assessment
 
-## Getting Started
+A private workspace for recording an organization’s sustainability checklist. One account owns one organization. Sections A–D come from `CHECKLIST (3).xlsx`.
 
-First, run the development server:
+## Project structure
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+Frontend UI and backend server code are separate folders. Next.js `app/` routes connect them.
+
+```
+frontend/     React UI — components, styles, client helpers
+backend/      Server — Prisma, auth, APIs, server actions, scripts
+app/          Next.js routes only (pages import frontend UI + backend data)
+public/       Static files (Next.js requires this at the project root)
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Frontend** lives in `frontend/components` and `frontend/lib`.
+- **Backend** lives in `backend/` (`prisma`, `actions`, `api`, `auth.ts`, `lib`, `queries`, `scripts`).
+- `app/api/*` files are thin re-exports of `backend/api/*`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Run locally
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 1. PostgreSQL
 
-## Learn More
+Use your own Postgres server, or start one with Docker:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+docker compose up -d
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Copy `.env.example` to `.env` and set:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- `DATABASE_URL` — e.g. `postgresql://gstc:gstc@localhost:5432/gstc?schema=public`
+- `AUTH_SECRET` — a long random string
 
-## Deploy on Vercel
+### 2. App
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+npm install
+npx prisma migrate deploy
+npm run db:seed
+npm run dev
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Open http://localhost:3000.
+
+**Note:** The app uses **PostgreSQL** (not SQLite). Existing `prisma/dev.db` data is not migrated automatically; create users again or export/import manually if needed.
+
+### Admin and managed users
+
+Create an **admin** account (can add users in the app and edit their email/password):
+
+```bash
+npm run user:create -- admin@example.com "AdminPassword123" --admin
+```
+
+Or promote an existing account:
+
+```bash
+npm run user:admin -- admin@example.com
+```
+
+Sign in, then open **Users** in the top navigation (`/admin/users`). Managed users sign in with the email and password you set and **cannot** change their password in My Space.
+
+CLI-only provisioned user (no admin UI):
+
+```bash
+npm run user:create -- user@example.com "their-password"
+```
+
+Public self-sign-up is **off** by default (clients only get accounts you create). To allow `/signup` for testing, set `PUBLIC_SIGNUP=true` in `.env`.
+
+Uploaded files are stored in `storage/` and are not public. Answers are kept in PostgreSQL.

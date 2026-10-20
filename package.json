@@ -1,17 +1,35 @@
 {
-  "name": "gstc-app",
+  "name": "gstc",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "dev:setup": "prisma migrate deploy && prisma generate",
+    "dev:stack": "npm run dev:setup && npm run dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "db:seed": "tsx backend/prisma/seed.ts",
+    "user:create": "tsx backend/scripts/create-user.ts",
+    "user:admin": "tsx backend/scripts/set-admin.ts",
+    "user:password": "tsx backend/scripts/set-password.ts",
+    "browsers:install": "puppeteer browsers install chrome",
+    "postinstall": "prisma generate && npm run browsers:install"
+  },
+  "prisma": {
+    "schema": "backend/prisma/schema.prisma",
+    "seed": "tsx backend/prisma/seed.ts"
   },
   "dependencies": {
+    "@prisma/client": "^6.19.0",
+    "bcryptjs": "^3.0.3",
     "next": "16.3.8",
+    "next-auth": "^5.0.0-beta.30",
+    "puppeteer": "^25.13.0",
     "react": "19.2.8",
-    "react-dom": "19.2.8"
+    "react-dom": "19.2.8",
+    "sharp": "^0.35.5",
+    "zod": "^4.6.5"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
@@ -20,7 +38,9 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.3.8",
+    "prisma": "^6.19.0",
     "tailwindcss": "^4",
+    "tsx": "^4.23.15",
     "typescript": "^5"
   }
 }

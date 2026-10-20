@@ -1,0 +1,3 @@
+-- AlterTable
+ALTER TABLE "Response" ADD COLUMN "remarks" TEXT NOT NULL DEFAULT '';
+ALTER TABLE "Response" ADD COLUMN "actionPlan" TEXT NOT NULL DEFAULT '';

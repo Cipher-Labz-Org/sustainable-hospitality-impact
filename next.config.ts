@@ -1,7 +1,16 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  serverExternalPackages: ["puppeteer"],
+  turbopack: {
+    root: process.cwd(),
+  },
+  experimental: {
+    serverActions: {
+      bodySizeLimit: "20mb",
+    },
+    proxyClientMaxBodySize: "20mb",
+  },
 };
 
 export default nextConfig;
