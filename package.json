@@ -1,46 +1,21 @@
 {
-  "name": "gstc",
+  "name": "sustainable-hospitality-impact",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "dev:setup": "prisma migrate deploy && prisma generate",
+    "dev": "npm run dev --prefix frontend",
+    "build": "npm run build --prefix frontend",
+    "start": "npm run start --prefix frontend",
+    "lint": "npm run lint --prefix frontend",
+    "typecheck": "npm run typecheck --prefix frontend && npm run typecheck --prefix backend",
+    "db:migrate": "npm run db:migrate --prefix backend",
+    "db:seed": "npm run db:seed --prefix backend",
+    "db:generate": "npm run db:generate --prefix backend",
+    "dev:setup": "npm run db:migrate --prefix backend && npm run db:generate --prefix backend",
     "dev:stack": "npm run dev:setup && npm run dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "eslint",
-    "db:seed": "tsx backend/prisma/seed.ts",
-    "user:create": "tsx backend/scripts/create-user.ts",
-    "user:admin": "tsx backend/scripts/set-admin.ts",
-    "user:password": "tsx backend/scripts/set-password.ts",
-    "browsers:install": "puppeteer browsers install chrome",
-    "postinstall": "prisma generate && npm run browsers:install"
-  },
-  "prisma": {
-    "schema": "backend/prisma/schema.prisma",
-    "seed": "tsx backend/prisma/seed.ts"
-  },
-  "dependencies": {
-    "@prisma/client": "^6.19.0",
-    "bcryptjs": "^3.0.3",
-    "next": "16.3.8",
-    "next-auth": "^5.0.0-beta.30",
-    "puppeteer": "^25.13.0",
-    "react": "19.2.8",
-    "react-dom": "19.2.8",
-    "sharp": "^0.35.5",
-    "zod": "^4.6.5"
-  },
-  "devDependencies": {
-    "@tailwindcss/postcss": "^4",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "eslint": "^9",
-    "eslint-config-next": "16.3.8",
-    "prisma": "^6.19.0",
-    "tailwindcss": "^4",
-    "tsx": "^4.23.15",
-    "typescript": "^5"
+    "user:create": "npm run user:create --prefix backend --",
+    "user:admin": "npm run user:admin --prefix backend --",
+    "user:password": "npm run user:password --prefix backend --",
+    "browsers:install": "npm run browsers:install --prefix frontend"
   }
 }

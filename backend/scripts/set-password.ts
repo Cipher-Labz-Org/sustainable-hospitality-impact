@@ -7,7 +7,7 @@ async function main() {
   const email = (process.argv[2] ?? "").trim().toLowerCase();
   const password = process.argv[3] ?? "";
   if (!email || !password) {
-    console.error("Usage: npx tsx backend/scripts/set-password.ts <email> <new-password>");
+    console.error("Usage: npm run user:password -- <email> <new-password>");
     process.exitCode = 1;
     return;
   }

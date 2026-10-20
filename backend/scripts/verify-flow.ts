@@ -2,7 +2,7 @@ import { rm } from "fs/promises";
 import path from "path";
 import bcrypt from "bcryptjs";
 import { PrismaClient } from "@prisma/client";
-import { storeUpload } from "@/backend/lib/storage";
+import { storageRoot, storeUpload } from "@/backend/lib/storage";
 
 const base = process.env.BASE_URL ?? "http://localhost:3001";
 const prisma = new PrismaClient();
@@ -136,7 +136,7 @@ async function main() {
   assert(answeredHtml.includes('aria-checked="true"'), "saved Yes status did not render");
 
   await prisma.user.delete({ where: { id: user.id } });
-  await rm(path.join(process.cwd(), "storage", "evidence", organization.id), { recursive: true, force: true });
+  await rm(path.join(storageRoot(), "evidence", organization.id), { recursive: true, force: true });
   console.log("verification passed");
 }
 
