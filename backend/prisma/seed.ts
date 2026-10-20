@@ -1,6 +1,7 @@
 import { PrismaClient } from "@prisma/client";
 import { readFileSync } from "fs";
 import path from "path";
+import { fileURLToPath } from "node:url";
 
 const prisma = new PrismaClient();
 
@@ -14,7 +15,8 @@ type CriterionRow = {
 };
 
 async function main() {
-  const raw = readFileSync(path.join(process.cwd(), "backend", "data", "criteria.json"), "utf8");
+  const seedDir = path.dirname(fileURLToPath(import.meta.url));
+  const raw = readFileSync(path.join(seedDir, "..", "data", "criteria.json"), "utf8");
   const rows = JSON.parse(raw) as CriterionRow[];
 
   for (const row of rows) {

@@ -13,7 +13,7 @@ async function main() {
   const password = positional[1];
 
   if (!emailRaw || !password) {
-    console.error("Usage: npx tsx backend/scripts/create-user.ts <email> <password> [--admin] [--allow-password-change]");
+    console.error("Usage: npm run user:create -- <email> <password> [--admin] [--allow-password-change]");
     process.exitCode = 1;
     return;
   }

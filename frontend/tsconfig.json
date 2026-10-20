@@ -19,8 +19,8 @@
       }
     ],
     "paths": {
-      "@/frontend/*": ["./frontend/*"],
-      "@/backend/*": ["./backend/*"],
+      "@/frontend/*": ["./*"],
+      "@/backend/*": ["../backend/*"],
       "@/*": ["./*"]
     }
   },
@@ -30,7 +30,9 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
-    "**/*.mts"
+    "**/*.mts",
+    "../backend/**/*.ts",
+    "../backend/**/*.tsx"
   ],
   "exclude": ["node_modules"]
 }

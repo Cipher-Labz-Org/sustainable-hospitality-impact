@@ -1,0 +1,32 @@
+{
+  "name": "sustainable-hospitality-impact-backend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "db:migrate": "prisma migrate deploy",
+    "db:migrate:dev": "prisma migrate dev",
+    "db:generate": "prisma generate",
+    "db:seed": "tsx prisma/seed.ts",
+    "user:create": "tsx scripts/create-user.ts",
+    "user:admin": "tsx scripts/set-admin.ts",
+    "user:password": "tsx scripts/set-password.ts",
+    "verify:flow": "tsx scripts/verify-flow.ts",
+    "typecheck": "tsc --noEmit",
+    "postinstall": "prisma generate"
+  },
+  "prisma": {
+    "schema": "prisma/schema.prisma",
+    "seed": "tsx prisma/seed.ts"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.19.0",
+    "bcryptjs": "^3.0.3",
+    "sharp": "^0.35.5"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "prisma": "^6.19.0",
+    "tsx": "^4.23.15",
+    "typescript": "^5"
+  }
+}

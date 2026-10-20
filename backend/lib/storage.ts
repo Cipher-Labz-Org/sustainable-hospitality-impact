@@ -79,8 +79,16 @@ export function contentDisposition(name: string, inline: boolean) {
   return `${inline ? "inline" : "attachment"}; filename="${ascii}"; filename*=UTF-8''${encodeURIComponent(name)}`;
 }
 
-function storageRoot() {
-  return path.resolve(process.cwd(), "storage");
+export function storageRoot() {
+  if (process.env.STORAGE_ROOT) {
+    return path.resolve(process.env.STORAGE_ROOT);
+  }
+  const cwd = process.cwd();
+  const folder = path.basename(cwd);
+  if (folder === "frontend" || folder === "backend") {
+    return path.resolve(cwd, "..", "storage");
+  }
+  return path.resolve(cwd, "storage");
 }
 
 export function absoluteStoredPath(folder: "evidence" | "brand", organizationId: string, storedName: string) {
@@ -94,12 +102,12 @@ export function absoluteStoredPath(folder: "evidence" | "brand", organizationId:
 }
 
 export async function readStoredFile(folder: "evidence" | "brand", organizationId: string, storedName: string) {
-  return readFile(absoluteStoredPath(folder, organizationId, storedName));
+  return readFile(/* turbopackIgnore: true */ absoluteStoredPath(folder, organizationId, storedName));
 }
 
 export async function removeStoredFile(folder: "evidence" | "brand", organizationId: string, storedName: string) {
   try {
-    await unlink(absoluteStoredPath(folder, organizationId, storedName));
+    await unlink(/* turbopackIgnore: true */ absoluteStoredPath(folder, organizationId, storedName));
   } catch (error) {
     const code = (error as NodeJS.ErrnoException).code;
     if (code !== "ENOENT") throw error;
@@ -152,8 +160,8 @@ export async function storeUpload(folder: "evidence" | "brand", organizationId: 
 
   const storedName = `${crypto.randomUUID()}${storedExt}`;
   const full = absoluteStoredPath(folder, organizationId, storedName);
-  await mkdir(path.dirname(full), { recursive: true });
-  await writeFile(full, output);
+  await mkdir(/* turbopackIgnore: true */ path.dirname(full), { recursive: true });
+  await writeFile(/* turbopackIgnore: true */ full, output);
 
   return {
     ok: true as const,

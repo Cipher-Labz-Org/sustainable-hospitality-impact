@@ -5,7 +5,7 @@ const prisma = new PrismaClient();
 async function main() {
   const emailRaw = process.argv[2];
   if (!emailRaw) {
-    console.error("Usage: npx tsx backend/scripts/set-admin.ts <email>");
+    console.error("Usage: npm run user:admin -- <email>");
     process.exitCode = 1;
     return;
   }
