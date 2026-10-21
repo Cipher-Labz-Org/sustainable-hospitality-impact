@@ -34,5 +34,13 @@
     "../backend/**/*.ts",
     "../backend/**/*.tsx"
   ],
-  "exclude": ["node_modules"]
+  "exclude": [
+    "node_modules",
+    "../backend/server.ts",
+    "../backend/app.ts",
+    "../backend/config",
+    "../backend/plugins",
+    "../backend/routes",
+    "../backend/scripts"
+  ]
 }

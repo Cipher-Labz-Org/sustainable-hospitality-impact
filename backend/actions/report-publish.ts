@@ -1,11 +1,14 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
-import { appBaseUrl, shareReportPath } from "@/backend/lib/app-url";
-import { createShareToken, isReportPublished } from "@/backend/lib/report-publish";
-import { prisma } from "@/backend/lib/prisma";
+import { appBaseUrl } from "@/backend/lib/app-url";
 import { requireOrganization } from "@/backend/lib/session";
 import type { ActionResult } from "@/backend/lib/validators";
+import {
+  publishOrganizationReport,
+  rotateOrganizationShareLink,
+  unpublishOrganizationReport,
+} from "@/backend/services/reports";
 
 function revalidatePublish() {
   revalidatePath("/assessment/publish");
@@ -18,53 +21,26 @@ function revalidatePublish() {
 
 export async function publishAssessmentReport(): Promise<ActionResult<{ shareUrl: string }>> {
   const { organization } = await requireOrganization();
-  if (isReportPublished(organization)) {
-    return { ok: false, error: "This report is already published. Unpublish first if you need to edit answers." };
-  }
-
-  const token = organization.reportShareToken ?? createShareToken();
-  await prisma.organization.update({
-    where: { id: organization.id },
-    data: {
-      reportPublishedAt: new Date(),
-      reportShareToken: token,
-    },
-  });
-
+  const result = await publishOrganizationReport(organization, await appBaseUrl());
+  if (!result.ok) return result;
   revalidatePublish();
-  const base = await appBaseUrl();
-  return { ok: true, data: { shareUrl: `${base}${shareReportPath(token)}` } };
+  return result;
 }
 
 export async function unpublishAssessmentReport(): Promise<ActionResult> {
   const { organization } = await requireOrganization();
-  if (!isReportPublished(organization)) {
-    return { ok: false, error: "There is no published report to unpublish." };
-  }
-
-  await prisma.organization.update({
-    where: { id: organization.id },
-    data: { reportPublishedAt: null },
-  });
-
+  const result = await unpublishOrganizationReport(organization);
+  if (!result.ok) return result;
   revalidatePublish();
   return { ok: true };
 }
 
 export async function rotateShareLink(): Promise<ActionResult<{ shareUrl: string }>> {
   const { organization } = await requireOrganization();
-  if (!isReportPublished(organization)) {
-    return { ok: false, error: "Publish the report before generating a share link." };
-  }
-
-  const token = createShareToken();
-  await prisma.organization.update({
-    where: { id: organization.id },
-    data: { reportShareToken: token },
-  });
-
+  const result = await rotateOrganizationShareLink(organization, await appBaseUrl());
+  if (!result.ok) return result;
+  if (!result.data) return { ok: false, error: "The share link could not be created." };
   revalidatePublish();
-  revalidatePath(`/share/${token}`);
-  const base = await appBaseUrl();
-  return { ok: true, data: { shareUrl: `${base}${shareReportPath(token)}` } };
+  revalidatePath(`/share/${result.data.token}`);
+  return { ok: true, data: { shareUrl: result.data.shareUrl } };
 }

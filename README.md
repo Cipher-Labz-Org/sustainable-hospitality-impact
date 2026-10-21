@@ -2,18 +2,20 @@
 
 A private workspace for recording an organization’s sustainability checklist. One account owns one organization. Sections A–D come from `CHECKLIST (3).xlsx`.
 
-Frontend UI deploys to Vercel. PostgreSQL, Prisma migrations, and CLI user tools run on the Cipher Labz company server. Next.js Route Handlers and Server Actions currently stay with the frontend so login, uploads, and reports keep working without an API rewrite.
+Frontend UI deploys to Vercel. PostgreSQL, Prisma migrations, CLI user tools, and a Fastify HTTP skeleton run on the Cipher Labz company server. Next.js Route Handlers, Auth.js, and Server Actions still stay with the frontend, so login, uploads, and reports keep working without an API rewrite.
+
+Auth, uploads, and reports are frozen on the Next.js app until later migration phases. The Fastify process currently exposes `/health`, `/ready`, and `GET /v1/auth/csrf` only. The API contract is `backend/openapi/v1.yaml`.
 
 ## Project structure
 
 ```
 frontend/     Next.js app (Vercel Root Directory)
-backend/      Prisma schema, auth, server actions, API handlers, CLI scripts
+backend/      Fastify skeleton, Prisma, services, Auth.js actions, CLI scripts
 storage/      Uploaded evidence and logos (not public)
 ```
 
 - **Frontend** (`frontend/`): `app/` routes, React UI, styles, and static files. Independently installable for Vercel.
-- **Backend** (`backend/`): Prisma, Auth.js, server actions, `/api` handlers, and admin CLI. Imported by the Next.js app; CLI scripts run on the company server.
+- **Backend** (`backend/`): Fastify server, Prisma, reusable services, Auth.js, server actions, `/api` handlers, and admin CLI. The Next.js app still imports `backend/` as a library.
 - `frontend/app/api/*` files are thin re-exports of `backend/api/*`.
 
 ## Run locally
@@ -30,10 +32,11 @@ Copy `frontend/.env.example` to `frontend/.env` and `backend/.env.example` to `b
 
 - `DATABASE_URL` — e.g. `postgresql://gstc:gstc@localhost:5432/gstc?schema=public`
 - `AUTH_SECRET` — a long random string (frontend)
+- Optional Fastify values in `backend/.env`: `HOST=127.0.0.1`, `PORT=4000`, `CORS_ORIGINS=http://localhost:3000`
 
 Keep `STORAGE_ROOT="../storage"` so uploads stay in the repo-root `storage/` folder.
 
-### 2. Backend (database)
+### 2. Backend (database and Fastify skeleton)
 
 ```bash
 cd backend
@@ -41,6 +44,15 @@ npm install
 npm run db:migrate
 npm run db:seed
 ```
+
+The Next.js app does not call Fastify yet. To run the API process locally:
+
+```bash
+cd backend
+npm run dev
+```
+
+Open http://127.0.0.1:4000/health. From the repo root you can also run `npm run dev:api` and `npm run verify:server`.
 
 ### 3. Frontend
 
@@ -54,7 +66,7 @@ Open http://localhost:3000.
 
 PDF export needs Chrome. After `npm install` in `frontend/`, run `npm run browsers:install` if reports fail to generate.
 
-From the repo root you can also run `npm run dev`, `npm run db:migrate`, and `npm run db:seed` after installing each package once.
+From the repo root you can also run `npm run dev`, `npm run dev:api`, `npm run db:migrate`, and `npm run db:seed` after installing each package once.
 
 **Note:** The app uses **PostgreSQL** (not SQLite). Existing `prisma/dev.db` data is not migrated automatically; create users again or export/import manually if needed.
 
@@ -96,8 +108,10 @@ Uploaded files are stored in `storage/` and are not public. Answers are kept in 
 
 Environment variables are listed in `frontend/.env.example`.
 
-### Company server (database and CLI)
+### Company server (database, CLI, Fastify)
 
 - Host PostgreSQL (see `docker-compose.yml` for a local equivalent)
 - Run `backend` install + `npm run db:migrate` (and `db:seed` when needed)
-- Point the Vercel `DATABASE_URL` at this database over TLS
+- Compile and run Fastify with `npm run build` then `npm start` (listens on `127.0.0.1:4000` by default)
+- Fastify should stay on `127.0.0.1` behind nginx TLS once later phases land
+- Until the API cutover, point the Vercel `DATABASE_URL` at this database over TLS so the current Next.js app keeps working

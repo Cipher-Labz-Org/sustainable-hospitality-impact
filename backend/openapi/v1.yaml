@@ -1,0 +1,540 @@
+openapi: 3.1.0
+info:
+  title: Sustainable Hospitality Impact API
+  version: 0.1.0
+  description: |
+    Contract for the company-hosted Fastify API.
+
+    Phase 0 freeze: do not change auth, uploads, or report behavior on the
+    Next.js app while this skeleton is introduced.
+
+    Phase 1 implements `/health`, `/ready`, and `GET /v1/auth/csrf` plus
+    security middleware. All other paths are locked here for later phases.
+    Authentication is still Auth.js on Next.js until Phase 2.
+
+    Production hostnames are not assigned yet. Target topology is a shared
+    parent domain (`app.` UI and `api.` Fastify). Unrelated-host fallback is
+    documented in the migration plan and is not the default.
+
+    Error and success bodies use today's `ActionResult` shape:
+    `{ ok: true, data?, warning? }` or `{ ok: false, error, fieldErrors? }`.
+servers:
+  - url: http://127.0.0.1:4000
+    description: Local Fastify process. The Next.js app on :3000 does not call this yet.
+  - url: https://api.example.com
+    description: Production placeholder. Replace after DNS is assigned.
+tags:
+  - name: Ops
+  - name: Auth
+  - name: Profile
+  - name: Assessment
+  - name: Evidence
+  - name: Reports
+  - name: Admin
+components:
+  securitySchemes:
+    sessionCookie:
+      type: apiKey
+      in: cookie
+      name: __Secure-shi_session
+      description: API-issued HttpOnly session cookie. Not implemented in Phase 1.
+    csrfHeader:
+      type: apiKey
+      in: header
+      name: X-CSRF-Token
+  schemas:
+    ActionSuccess:
+      type: object
+      required: [ok]
+      properties:
+        ok: { type: boolean, enum: [true] }
+        data: {}
+        warning: { type: string }
+    ActionError:
+      type: object
+      required: [ok, error]
+      properties:
+        ok: { type: boolean, enum: [false] }
+        error: { type: string }
+        fieldErrors:
+          type: object
+          additionalProperties: { type: string }
+    HealthData:
+      type: object
+      required: [status]
+      properties:
+        status: { type: string, enum: [ok] }
+    ReadyChecks:
+      type: object
+      required: [database, storage, chromium]
+      properties:
+        database: { type: string, enum: [ok, error] }
+        storage: { type: string, enum: [ok, error] }
+        chromium: { type: string, enum: [ok, missing] }
+    CsrfData:
+      type: object
+      required: [csrfToken]
+      properties:
+        csrfToken: { type: string }
+paths:
+  /health:
+    get:
+      tags: [Ops]
+      summary: Liveness
+      x-status: implemented
+      security: []
+      responses:
+        "200":
+          description: Process is running.
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: "#/components/schemas/ActionSuccess"
+                  - type: object
+                    properties:
+                      data: { $ref: "#/components/schemas/HealthData" }
+  /ready:
+    get:
+      tags: [Ops]
+      summary: Readiness
+      description: Postgres, writable STORAGE_ROOT, and a system Chromium/Chrome/Edge path.
+      x-status: implemented
+      security: []
+      responses:
+        "200":
+          description: All checks passed.
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: "#/components/schemas/ActionSuccess"
+                  - type: object
+                    properties:
+                      data: { $ref: "#/components/schemas/ReadyChecks" }
+        "503":
+          description: One or more checks failed. No secrets are returned.
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: "#/components/schemas/ActionError"
+                  - type: object
+                    properties:
+                      checks: { $ref: "#/components/schemas/ReadyChecks" }
+  /v1/auth/csrf:
+    get:
+      tags: [Auth]
+      summary: CSRF token
+      x-status: implemented
+      security: []
+      responses:
+        "200":
+          description: Token plus HttpOnly CSRF secret cookie.
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: "#/components/schemas/ActionSuccess"
+                  - type: object
+                    properties:
+                      data: { $ref: "#/components/schemas/CsrfData" }
+  /v1/auth/login:
+    post:
+      tags: [Auth]
+      summary: Email/password login
+      x-status: planned-phase-2
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [email, password]
+              properties:
+                email: { type: string }
+                password: { type: string }
+                callbackUrl: { type: string }
+      responses:
+        "200":
+          description: Sets the API session cookie.
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/ActionSuccess" }
+  /v1/auth/logout:
+    post:
+      tags: [Auth]
+      summary: Logout
+      x-status: planned-phase-2
+      security: [{ csrfHeader: [] }]
+      responses:
+        "200":
+          description: Clears the session cookie.
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/ActionSuccess" }
+  /v1/auth/signup:
+    post:
+      tags: [Auth]
+      summary: Public signup when PUBLIC_SIGNUP=true
+      x-status: planned-phase-2
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/ActionSuccess" }
+  /v1/auth/session:
+    get:
+      tags: [Auth]
+      summary: Current session
+      x-status: planned-phase-2
+      security: [{ sessionCookie: [] }]
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/ActionSuccess" }
+  /v1/me/header:
+    get:
+      tags: [Profile]
+      x-status: planned-phase-2
+      security: [{ sessionCookie: [] }]
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/ActionSuccess" }
+  /v1/me:
+    get:
+      tags: [Profile]
+      x-status: planned-phase-3
+      security: [{ sessionCookie: [] }]
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/ActionSuccess" }
+  /v1/me/organization:
+    patch:
+      tags: [Profile]
+      x-status: planned-phase-3
+      security: [{ sessionCookie: [], csrfHeader: [] }]
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/ActionSuccess" }
+  /v1/me/contact:
+    patch:
+      tags: [Profile]
+      x-status: planned-phase-3
+      security: [{ sessionCookie: [], csrfHeader: [] }]
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/ActionSuccess" }
+  /v1/me/signin:
+    patch:
+      tags: [Profile]
+      x-status: planned-phase-3
+      security: [{ sessionCookie: [], csrfHeader: [] }]
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/ActionSuccess" }
+  /v1/me/logo:
+    get:
+      tags: [Profile]
+      x-status: planned-phase-4
+      security: [{ sessionCookie: [] }]
+      responses:
+        "200": { description: Image bytes }
+    post:
+      tags: [Profile]
+      x-status: planned-phase-4
+      security: [{ sessionCookie: [], csrfHeader: [] }]
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/ActionSuccess" }
+    delete:
+      tags: [Profile]
+      x-status: planned-phase-4
+      security: [{ sessionCookie: [], csrfHeader: [] }]
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/ActionSuccess" }
+  /v1/assessment/summary:
+    get:
+      tags: [Assessment]
+      x-status: planned-phase-3
+      security: [{ sessionCookie: [] }]
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/ActionSuccess" }
+  /v1/assessment/sections/{id}:
+    get:
+      tags: [Assessment]
+      x-status: planned-phase-3
+      security: [{ sessionCookie: [] }]
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema: { type: string }
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/ActionSuccess" }
+  /v1/assessment/responses/{ref}:
+    put:
+      tags: [Assessment]
+      x-status: planned-phase-3
+      security: [{ sessionCookie: [], csrfHeader: [] }]
+      parameters:
+        - in: path
+          name: ref
+          required: true
+          schema: { type: string }
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/ActionSuccess" }
+  /v1/assessment/overview:
+    get:
+      tags: [Assessment]
+      x-status: planned-phase-3
+      security: [{ sessionCookie: [] }]
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/ActionSuccess" }
+  /v1/assessment/remarks:
+    get:
+      tags: [Assessment]
+      x-status: planned-phase-3
+      security: [{ sessionCookie: [] }]
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/ActionSuccess" }
+  /v1/assessment/action-plans:
+    get:
+      tags: [Assessment]
+      x-status: planned-phase-3
+      security: [{ sessionCookie: [] }]
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/ActionSuccess" }
+  /v1/assessment/library:
+    get:
+      tags: [Assessment]
+      x-status: planned-phase-3
+      security: [{ sessionCookie: [] }]
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/ActionSuccess" }
+  /v1/assessment/audit:
+    get:
+      tags: [Assessment]
+      x-status: planned-phase-3
+      security: [{ sessionCookie: [] }]
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/ActionSuccess" }
+  /v1/assessment/sustainability:
+    get:
+      tags: [Assessment]
+      x-status: planned-phase-3
+      security: [{ sessionCookie: [] }]
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/ActionSuccess" }
+  /v1/assessment/responses/{ref}/evidence:
+    post:
+      tags: [Evidence]
+      x-status: planned-phase-4
+      security: [{ sessionCookie: [], csrfHeader: [] }]
+      parameters:
+        - in: path
+          name: ref
+          required: true
+          schema: { type: string }
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/ActionSuccess" }
+  /v1/evidence/{id}:
+    get:
+      tags: [Evidence]
+      x-status: planned-phase-4
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema: { type: string }
+      responses:
+        "200": { description: File bytes }
+    delete:
+      tags: [Evidence]
+      x-status: planned-phase-4
+      security: [{ sessionCookie: [], csrfHeader: [] }]
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema: { type: string }
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/ActionSuccess" }
+  /v1/reports/publish:
+    post:
+      tags: [Reports]
+      x-status: planned-phase-3
+      security: [{ sessionCookie: [], csrfHeader: [] }]
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/ActionSuccess" }
+  /v1/reports/unpublish:
+    post:
+      tags: [Reports]
+      x-status: planned-phase-3
+      security: [{ sessionCookie: [], csrfHeader: [] }]
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/ActionSuccess" }
+  /v1/reports/share-link/rotate:
+    post:
+      tags: [Reports]
+      x-status: planned-phase-3
+      security: [{ sessionCookie: [], csrfHeader: [] }]
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/ActionSuccess" }
+  /v1/reports:
+    get:
+      tags: [Reports]
+      x-status: planned-phase-4
+      security: [{ sessionCookie: [] }]
+      parameters:
+        - in: query
+          name: format
+          schema: { type: string, enum: [html, csv, pdf] }
+      responses:
+        "200": { description: Report payload }
+  /v1/public/share/{token}:
+    get:
+      tags: [Reports]
+      x-status: planned-phase-3
+      security: []
+      parameters:
+        - in: path
+          name: token
+          required: true
+          schema: { type: string }
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/ActionSuccess" }
+  /v1/admin/users:
+    get:
+      tags: [Admin]
+      x-status: planned-phase-3
+      security: [{ sessionCookie: [] }]
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/ActionSuccess" }
+    post:
+      tags: [Admin]
+      x-status: planned-phase-3
+      security: [{ sessionCookie: [], csrfHeader: [] }]
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/ActionSuccess" }
+  /v1/admin/users/{userId}:
+    patch:
+      tags: [Admin]
+      x-status: planned-phase-3
+      security: [{ sessionCookie: [], csrfHeader: [] }]
+      parameters:
+        - in: path
+          name: userId
+          required: true
+          schema: { type: string }
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/ActionSuccess" }
+    delete:
+      tags: [Admin]
+      x-status: planned-phase-3
+      security: [{ sessionCookie: [], csrfHeader: [] }]
+      parameters:
+        - in: path
+          name: userId
+          required: true
+          schema: { type: string }
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/ActionSuccess" }
+  /v1/admin/clients:
+    get:
+      tags: [Admin]
+      x-status: planned-phase-3
+      security: [{ sessionCookie: [] }]
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/ActionSuccess" }
+  /v1/admin/clients/{userId}:
+    get:
+      tags: [Admin]
+      x-status: planned-phase-3
+      security: [{ sessionCookie: [] }]
+      parameters:
+        - in: path
+          name: userId
+          required: true
+          schema: { type: string }
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/ActionSuccess" }

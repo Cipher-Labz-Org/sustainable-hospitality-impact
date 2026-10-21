@@ -1,7 +1,7 @@
 import { auth } from "@/backend/auth";
-import { prisma } from "@/backend/lib/prisma";
 import { getAdminUser } from "@/backend/lib/session";
-import { contentDisposition, readStoredFile } from "@/backend/lib/storage";
+import { contentDisposition } from "@/backend/lib/storage";
+import { loadOrganizationBrand, readBrandBytes } from "@/backend/services/files";
 
 export async function GET(request: Request) {
   const session = await auth();
@@ -10,16 +10,13 @@ export async function GET(request: Request) {
   const userId = new URL(request.url).searchParams.get("userId")?.trim() ?? "";
   const admin = userId && userId !== session.user.id ? await getAdminUser() : null;
 
-  const organization = await prisma.organization.findUnique({
-    where: { userId: admin ? userId : session.user.id },
-    include: { brand: true, user: { select: { isAdmin: true } } },
-  });
+  const organization = await loadOrganizationBrand(admin ? userId : session.user.id);
 
   if (admin && organization?.user.isAdmin) return new Response("Logo not found.", { status: 404 });
   if (!organization?.brand) return new Response("Logo not found.", { status: 404 });
 
   try {
-    const bytes = await readStoredFile("brand", organization.id, organization.brand.storedName);
+    const bytes = await readBrandBytes(organization.id, organization.brand.storedName);
     return new Response(new Uint8Array(bytes), {
       headers: {
         "Content-Type": organization.brand.mimeType,
