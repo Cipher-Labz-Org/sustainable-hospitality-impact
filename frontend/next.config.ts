@@ -5,9 +5,17 @@ import { fileURLToPath } from "node:url";
 const frontendDir = path.dirname(fileURLToPath(import.meta.url));
 const repoRoot = path.join(frontendDir, "..");
 
+const frontendNodeModules = path.join(frontendDir, "node_modules");
+
 const nextConfig: NextConfig = {
-  serverExternalPackages: ["puppeteer"],
+  serverExternalPackages: ["@sparticuz/chromium", "puppeteer-core", "sharp"],
   outputFileTracingRoot: repoRoot,
+  outputFileTracingIncludes: {
+    "*": [
+      "./node_modules/.prisma/client/**",
+      "./node_modules/@prisma/client/**",
+    ],
+  },
   outputFileTracingExcludes: {
     "*": [
       "../Images/**",
@@ -21,6 +29,15 @@ const nextConfig: NextConfig = {
   },
   turbopack: {
     root: repoRoot,
+  },
+  webpack: (config) => {
+    const modules = [
+      frontendNodeModules,
+      ...(Array.isArray(config.resolve.modules) ? config.resolve.modules : []),
+      "node_modules",
+    ];
+    config.resolve.modules = [...new Set(modules)];
+    return config;
   },
   experimental: {
     serverActions: {

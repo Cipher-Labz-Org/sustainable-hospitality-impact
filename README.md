@@ -103,10 +103,24 @@ Uploaded files are stored in `storage/` and are not public. Answers are kept in 
 
 - Root Directory: `frontend`
 - Framework Preset: Next.js
-- Install / build / output: leave as Next.js defaults
+- Node.js Version: 22.x (`frontend/.nvmrc`; required by `@sparticuz/chromium`)
+- Install / build / output: leave as Next.js defaults (`frontend/vercel.json` sets the install command)
 - Include files outside the Root Directory in the build (the app imports `../backend`)
 
-Environment variables are listed in `frontend/.env.example`.
+Required environment variables (names only; set values in the Vercel project):
+
+- `DATABASE_URL` — PostgreSQL connection string (used at runtime, not to migrate during build)
+- `AUTH_SECRET` — Auth.js session signing secret
+- `AUTH_URL` — canonical site URL, e.g. `https://your-frontend-domain.com`
+- `NEXT_PUBLIC_APP_URL` — same public site URL, used for share links
+
+Optional:
+
+- `PUBLIC_SIGNUP` — set to `true` only if `/signup` should be public
+- `STORAGE_ROOT` — upload directory; the Vercel filesystem is ephemeral
+- `PUPPETEER_EXECUTABLE_PATH` — local/server Chrome path; leave unset on Vercel
+
+Environment variable templates are in `frontend/.env.example`.
 
 ### Company server (database, CLI, Fastify)
 

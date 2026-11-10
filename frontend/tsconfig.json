@@ -21,7 +21,15 @@
     "paths": {
       "@/frontend/*": ["./*"],
       "@/backend/*": ["../backend/*"],
-      "@/*": ["./*"]
+      "@/*": ["./*"],
+      "@prisma/client": ["./node_modules/@prisma/client"],
+      "@sparticuz/chromium": ["./node_modules/@sparticuz/chromium"],
+      "bcryptjs": ["./node_modules/bcryptjs"],
+      "next-auth": ["./node_modules/next-auth"],
+      "next-auth/*": ["./node_modules/next-auth/*"],
+      "puppeteer-core": ["./node_modules/puppeteer-core"],
+      "sharp": ["./node_modules/sharp"],
+      "zod": ["./node_modules/zod"]
     }
   },
   "include": [
