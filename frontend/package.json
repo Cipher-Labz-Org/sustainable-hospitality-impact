@@ -8,7 +8,7 @@
   "scripts": {
     "dev": "next dev",
     "postinstall": "node scripts/ensure-install-layout.mjs",
-    "build": "node scripts/ensure-install-layout.mjs && next build",
+    "build": "node scripts/ensure-install-layout.mjs && next build --webpack",
     "start": "next start",
     "lint": "eslint",
     "typecheck": "tsc --noEmit",

@@ -23,7 +23,9 @@ const nextConfig: NextConfig = {
       "../CHECKLIST*",
       "../*.pdf",
       "../.git/**",
-      "../frontend/.next/**",
+      // Repo-root leftover from the pre-split app. Do not exclude frontend/.next:
+      // Webpack NFT must keep webpack-runtime.js and server chunks for Vercel.
+      "../.next/**",
       "../backend/node_modules/**",
     ],
   },
