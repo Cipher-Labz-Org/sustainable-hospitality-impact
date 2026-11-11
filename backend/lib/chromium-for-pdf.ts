@@ -1,65 +1,57 @@
-import { access } from "fs/promises";
-import path from "path";
+import { pathExists, resolveSystemChromiumExecutable } from "@/backend/lib/chromium-path";
 
-async function pathExists(filePath: string) {
+const DEFAULT_ARGS = ["--no-sandbox", "--disable-setuid-sandbox", "--disable-dev-shm-usage"];
+
+function isServerlessRuntime() {
+  return Boolean(process.env.VERCEL || process.env.AWS_LAMBDA_FUNCTION_NAME);
+}
+
+export type ChromiumLaunchOptions = {
+  executablePath: string;
+  args: string[];
+};
+
+/** Chromium/Chrome/Edge path and args for headless PDF rendering. */
+export async function resolveChromiumLaunch(): Promise<ChromiumLaunchOptions | undefined> {
+  const fromEnv = process.env.PUPPETEER_EXECUTABLE_PATH;
+  if (fromEnv && (await pathExists(fromEnv))) {
+    return { executablePath: fromEnv, args: DEFAULT_ARGS };
+  }
+
+  if (isServerlessRuntime()) {
+    try {
+      const chromium = await import("@sparticuz/chromium");
+      const executablePath = await chromium.default.executablePath();
+      if (executablePath) {
+        return {
+          executablePath,
+          args: chromium.default.args,
+        };
+      }
+    } catch {
+      // @sparticuz/chromium is optional outside Vercel; fall through to local browsers.
+    }
+  }
+
   try {
-    await access(filePath);
-    return true;
+    const puppeteer = await import("puppeteer-core");
+    const bundled = await puppeteer.default.executablePath();
+    if (bundled && (await pathExists(bundled))) {
+      return { executablePath: bundled, args: DEFAULT_ARGS };
+    }
   } catch {
-    return false;
+    // puppeteer-core has no bundled Chrome until `npm run browsers:install`.
   }
-}
 
-function windowsBrowserCandidates(): string[] {
-  const localAppData = process.env.LOCALAPPDATA;
-  return [
-    localAppData ? path.join(localAppData, "Google", "Chrome", "Application", "chrome.exe") : "",
-    "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
-    "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe",
-    "C:\\Program Files\\Microsoft\\Edge\\Application\\msedge.exe",
-    "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
-  ].filter(Boolean);
-}
-
-function unixBrowserCandidates(): string[] {
-  if (process.platform === "darwin") {
-    return [
-      "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
-      "/Applications/Microsoft Edge.app/Contents/MacOS/Microsoft Edge",
-      "/Applications/Chromium.app/Contents/MacOS/Chromium",
-    ];
+  const systemPath = await resolveSystemChromiumExecutable();
+  if (systemPath) {
+    return { executablePath: systemPath, args: DEFAULT_ARGS };
   }
-  return [
-    "/usr/bin/google-chrome-stable",
-    "/usr/bin/google-chrome",
-    "/usr/bin/chromium",
-    "/usr/bin/chromium-browser",
-  ];
+
+  return undefined;
 }
 
 /** Chromium/Chrome/Edge path for headless PDF rendering (Puppeteer). */
 export async function resolveChromiumExecutable(): Promise<string | undefined> {
-  const fromEnv = process.env.PUPPETEER_EXECUTABLE_PATH;
-  if (fromEnv && (await pathExists(fromEnv))) {
-    return fromEnv;
-  }
-
-  const puppeteer = await import("puppeteer");
-  try {
-    const bundled = await puppeteer.default.executablePath();
-    if (await pathExists(bundled)) {
-      return bundled;
-    }
-  } catch {
-    // Puppeteer's cache may be empty until `puppeteer browsers install chrome`.
-  }
-
-  const candidates = process.platform === "win32" ? windowsBrowserCandidates() : unixBrowserCandidates();
-  for (const candidate of candidates) {
-    if (await pathExists(candidate)) {
-      return candidate;
-    }
-  }
-
-  return undefined;
+  return (await resolveChromiumLaunch())?.executablePath;
 }

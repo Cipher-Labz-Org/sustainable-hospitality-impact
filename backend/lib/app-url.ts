@@ -1,4 +1,5 @@
 import { headers } from "next/headers";
+export { shareReportPath } from "@/backend/lib/report-publish";
 
 /** Origin for share links in server components and actions. */
 export async function appBaseUrl() {
@@ -7,8 +8,4 @@ export async function appBaseUrl() {
   const proto = headerList.get("x-forwarded-proto") ?? "http";
   if (host) return `${proto}://${host}`;
   return process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000";
-}
-
-export function shareReportPath(token: string) {
-  return `/share/${token}`;
 }

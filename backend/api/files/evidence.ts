@@ -3,7 +3,8 @@ import { auth } from "@/backend/auth";
 import { verifyEvidenceDownloadToken } from "@/backend/lib/evidence-download-token";
 import { prisma } from "@/backend/lib/prisma";
 import { getAdminUser } from "@/backend/lib/session";
-import { contentDisposition, readStoredFile } from "@/backend/lib/storage";
+import { contentDisposition } from "@/backend/lib/storage";
+import { loadEvidenceFileRecord, readEvidenceBytes } from "@/backend/services/files";
 
 export async function GET(
   request: NextRequest,
@@ -12,10 +13,7 @@ export async function GET(
   const { id } = await context.params;
   const reportToken = request.nextUrl.searchParams.get("reportToken");
 
-  const file = await prisma.evidenceFile.findUnique({
-    where: { id },
-    include: { response: { select: { organizationId: true } } },
-  });
+  const file = await loadEvidenceFileRecord(id);
   if (!file) return new Response("File not found.", { status: 404 });
 
   let organizationId: string | null = null;
@@ -46,7 +44,7 @@ export async function GET(
   }
 
   try {
-    const bytes = await readStoredFile("evidence", organizationId, file.storedName);
+    const bytes = await readEvidenceBytes(organizationId, file.storedName);
     const download = request.nextUrl.searchParams.get("download") === "1";
     const inline = !download && file.mimeType.startsWith("image/");
     return new Response(new Uint8Array(bytes), {
